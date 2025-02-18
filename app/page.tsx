@@ -1,101 +1,181 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <div className="min-h-screen bg-[url('https://images.unsplash.com/photo-1577720580479-7d839d829c73')] bg-fixed bg-cover">
+      {/* Batik Overlay */}
+      <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1582124825395-3cb5c3c6d1a9')] opacity-10 bg-repeat mix-blend-multiply pointer-events-none" />
+      
+      {/* Content Container */}
+      <div className="relative">
+        {/* Hero Section with gradient overlay */}
+        <section className="relative h-[80vh] flex items-center justify-center">
+          <div className="absolute inset-0 z-0 bg-gradient-to-b from-amber-900/30 to-black/50">
             <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src="https://images.unsplash.com/photo-1577720580479-7d839d829c73"
+              alt="Art Gallery"
+              fill
+              className="object-cover mix-blend-overlay"
+              priority
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+          </div>
+          <div className="relative z-10 text-center text-white px-4">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 text-amber-100">
+              Temukan Karya Seni Unik
+            </h1>
+            <p className="text-xl md:text-2xl mb-8 text-amber-50">
+              Platform marketplace karya seni terpercaya di Indonesia
+            </p>
+            <Link
+              href="/gallery"
+              className="bg-amber-800 text-amber-50 px-8 py-3 rounded-full text-lg font-semibold hover:bg-amber-700 transition-all transform hover:scale-105 shadow-lg"
+            >
+              Jelajahi Galeri
+            </Link>
+          </div>
+        </section>
+
+        {/* Featured Categories with semi-transparent background */}
+        <section className="py-16 px-4 md:px-8 bg-amber-50/90 backdrop-blur-sm">
+          <h2 className="text-3xl font-bold text-center mb-12 text-amber-900">Kategori Karya Seni</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {categories.map((category) => (
+              <Link
+                key={category.id}
+                href={`/gallery/${category.slug}`}
+                className="group relative h-64 overflow-hidden rounded-lg"
+              >
+                <Image
+                  src={category.image}
+                  alt={category.name}
+                  fill
+                  className="object-cover transition-transform group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-black/40 flex items-center justify-center">
+                  <h3 className="text-white text-2xl font-semibold">{category.name}</h3>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        {/* Featured Artwork */}
+        <section className="py-16 px-4 md:px-8 bg-white/95 backdrop-blur-sm relative">
+          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1582124825395-3cb5c3c6d1a9')] opacity-5 bg-repeat mix-blend-multiply" />
+          <h2 className="text-3xl font-bold text-center mb-12 text-amber-900">Karya Seni Unggulan</h2>
+          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+            {/* Karya Seni Pertama */}
+            <Link
+              href="/artwork/harmoni-alam"
+              className="relative aspect-[16/9] rounded-xl overflow-hidden group"
+            >
+              <Image
+                src="https://images.unsplash.com/photo-1578301978693-85fa9c0320b9"
+                alt="Harmoni Alam"
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-300"
+                sizes="(max-width: 768px) 100vw, 600px"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
+                <h3 className="text-white text-2xl font-semibold mb-2">Harmoni Alam</h3>
+                <p className="text-white/90">Karya: Sarah Wijaya</p>
+              </div>
+            </Link>
+
+            {/* Karya Seni Kedua */}
+            <Link
+              href="/artwork/wayang-kulit-modern"
+              className="relative aspect-[16/9] rounded-xl overflow-hidden group"
+            >
+              <Image
+                src="https://images.unsplash.com/photo-1600002415506-dd06090d3480"
+                alt="Wayang Kulit Modern"
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-300"
+                sizes="(max-width: 768px) 100vw, 600px"
+              />
+              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-6">
+                <h3 className="text-white text-2xl font-semibold mb-2">Wayang Kulit Modern</h3>
+                <p className="text-white/90">Karya: Budi Santoso</p>
+              </div>
+            </Link>
+          </div>
+        </section>
+
+        {/* Featured Artists with warm background */}
+        <section className="py-16 px-4 md:px-8 bg-gradient-to-b from-amber-50/95 to-amber-100/95 backdrop-blur-sm">
+          <h2 className="text-3xl font-bold text-center mb-12 text-amber-900">Seniman Unggulan</h2>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            {featuredArtists.map((artist) => (
+              <Link
+                key={artist.id}
+                href={`/artists/${artist.id}`}
+                className="group bg-white/80 p-4 rounded-lg shadow-sm hover:shadow-xl transition-all duration-300 backdrop-blur-sm hover:bg-white"
+              >
+                <div className="relative w-full aspect-square mb-4 rounded-full overflow-hidden ring-2 ring-amber-200 ring-offset-2">
+                  <Image
+                    src={artist.avatar}
+                    alt={artist.name}
+                    fill
+                    className="object-cover transition-transform group-hover:scale-105"
+                  />
+                </div>
+                <h3 className="text-lg font-semibold text-center text-amber-900">{artist.name}</h3>
+                <p className="text-amber-700 text-sm text-center">{artist.specialty}</p>
+              </Link>
+            ))}
+          </div>
+        </section>
+      </div>
     </div>
   );
 }
+
+const categories = [
+  {
+    id: 1,
+    name: "Lukisan",
+    slug: "paintings",
+    image: "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5"
+  },
+  {
+    id: 2,
+    name: "Fotografi",
+    slug: "photography",
+    image: "https://images.unsplash.com/photo-1554048612-b6a482bc67e5"
+  },
+  {
+    id: 3,
+    name: "Digital Art",
+    slug: "digital-art",
+    image: "https://images.unsplash.com/photo-1563089145-599997674d42"
+  }
+];
+
+const featuredArtists = [
+  {
+    id: 1,
+    name: "Affandi",
+    specialty: "Ekspresionisme & Lukisan",
+    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e"
+  },
+  {
+    id: 2,
+    name: "Raden Saleh",
+    specialty: "Lukisan Romantisme",
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d"
+  },
+  {
+    id: 3,
+    name: "Basuki Abdullah",
+    specialty: "Lukisan Realisme",
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d"
+  },
+  {
+    id: 4,
+    name: "Hendra Gunawan",
+    specialty: "Lukisan Kontemporer",
+    avatar: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce"
+  }
+];
