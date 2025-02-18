@@ -81,8 +81,10 @@ export default function WayangKulitModernDetail() {
               <h3 className="text-lg font-semibold text-amber-900 mb-4">Tentang Karya</h3>
               <div className="prose text-gray-600">
                 <p className="mb-4">
-                  "Wayang Kulit Modern" adalah perpaduan unik antara seni wayang kulit tradisional 
-                  dengan interpretasi kontemporer. Budi Santoso menghabiskan dua tahun untuk 
+                  Karya &ldquo;Wayang Kulit Modern&rdquo; adalah interpretasi kontemporer.
+                </p>
+                <p className="mb-4">
+                  Budi Santoso menghabiskan dua tahun untuk 
                   mempelajari teknik tradisional pembuatan wayang kulit dari para maestro di Solo 
                   dan Yogyakarta sebelum menciptakan karya ini.
                 </p>

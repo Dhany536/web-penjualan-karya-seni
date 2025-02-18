@@ -2,143 +2,176 @@ import Image from "next/image";
 import Link from "next/link";
 
 const artists = {
-  1: {
+  "1": {
+    id: 1,
     name: "Affandi",
     specialty: "Ekspresionisme & Lukisan",
     avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e",
-    bio: "Affandi (1907-1990) adalah salah satu pelukis Indonesia paling berpengaruh. Dikenal dengan gaya ekspresionismenya yang khas, ia melukis dengan cara langsung menggunakan cat dari tube dan jarinya. Karyanya mencerminkan emosi yang mendalam dan pandangan unik tentang kehidupan sehari-hari Indonesia.",
-    masterpieces: [
+    bio: "Affandi adalah salah satu pelukis Indonesia yang paling terkenal. Ia dikenal dengan gaya ekspresionismenya yang khas.",
+    achievements: [
+      "Penghargaan Seni dari Pemerintah RI (1969)",
+      "Cultural Award dari Pemerintah India (1950)",
+      "Bintang Jasa Utama (1978)"
+    ],
+    artworks: [
       {
-        title: "Self Portrait",
-        year: "1975",
-        image: "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5",
-        description: "Salah satu karya self-portrait paling terkenal yang menunjukkan gaya ekspresionisme khasnya."
-      },
-      {
-        title: "Perahu dan Matahari",
-        year: "1960",
-        image: "https://images.unsplash.com/photo-1578301978693-85fa9c0320b9",
-        description: "Menggambarkan kehidupan nelayan dengan warna-warna yang berani dan goresan ekspresif."
+        title: "Potret Diri dan Matahari",
+        year: "1977",
+        image: "https://images.unsplash.com/photo-1578301978693-85fa9c0320b9"
       }
     ]
   },
-  2: {
+  "2": {
+    id: 2,
     name: "Raden Saleh",
     specialty: "Lukisan Romantisme",
     avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d",
-    bio: "Raden Saleh (1811-1880) adalah pionir seni lukis modern Indonesia. Ia adalah pelukis pertama yang mendapat pendidikan formal di Eropa dan dikenal dengan lukisan-lukisan romantismenya yang menggabungkan gaya Eropa dengan tema-tema lokal Indonesia.",
-    masterpieces: [
+    bio: "Raden Saleh adalah pelopor seni lukis modern Indonesia. Ia dikenal dengan lukisan-lukisan romantismenya yang memukau.",
+    achievements: [
+      "Pelukis Istana Kerajaan Belanda",
+      "Penghargaan dari Raja Louis Philippe",
+      "Gelar Kehormatan dari berbagai kerajaan Eropa"
+    ],
+    artworks: [
       {
         title: "Penangkapan Pangeran Diponegoro",
         year: "1857",
-        image: "https://images.unsplash.com/photo-1554048612-b6a482bc67e5",
-        description: "Karya masterpiece yang menggambarkan momen bersejarah penangkapan Pangeran Diponegoro."
-      },
-      {
-        title: "Berburu Banteng",
-        year: "1855",
-        image: "https://images.unsplash.com/photo-1563089145-599997674d42",
-        description: "Lukisan yang menampilkan adegan perburuan dramatis dengan teknik romantisme Eropa."
+        image: "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5"
       }
     ]
   },
-  3: {
+  "3": {
+    id: 3,
     name: "Basuki Abdullah",
     specialty: "Lukisan Realisme",
     avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d",
-    bio: "Basuki Abdullah (1915-1993) adalah maestro lukisan realis Indonesia. Terkenal dengan lukisan potret dan pemandangan yang sangat detail dan realistis. Ia adalah pelukis istana yang melukis banyak tokoh penting, termasuk Presiden Soekarno.",
-    masterpieces: [
+    bio: "Basuki Abdullah adalah maestro lukisan realis Indonesia. Karyanya banyak menampilkan potret dan pemandangan dengan detail yang mengagumkan.",
+    achievements: [
+      "Pelukis Istana Kepresidenan RI",
+      "Grand Prize pada kompetisi lukis di Belanda (1933)",
+      "Penghargaan Seni dari Pemerintah Thailand"
+    ],
+    artworks: [
       {
-        title: "Potret Presiden Soekarno",
-        year: "1960",
-        image: "https://images.unsplash.com/photo-1578301978693-85fa9c0320b9",
-        description: "Salah satu potret paling terkenal dari Presiden Soekarno dengan detail yang mengagumkan."
-      },
-      {
-        title: "Gadis Bali",
+        title: "Gadis Bali dengan Bunga",
         year: "1952",
-        image: "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5",
-        description: "Lukisan yang menampilkan keindahan wanita Bali dengan teknik realisme yang sempurna."
+        image: "https://images.unsplash.com/photo-1549887534-1541e9326642"
       }
     ]
   },
-  4: {
+  "4": {
+    id: 4,
     name: "Hendra Gunawan",
     specialty: "Lukisan Kontemporer",
     avatar: "https://images.unsplash.com/photo-1492562080023-ab3db95bfbce",
-    bio: "Hendra Gunawan (1918-1983) adalah seniman yang dikenal dengan gaya uniknya dalam menggambarkan kehidupan rakyat Indonesia. Karyanya penuh dengan warna-warna cerah dan figur-figur yang ekspresif, menggambarkan kehidupan sehari-hari masyarakat Indonesia.",
-    masterpieces: [
-      {
-        title: "Penari Jaipongan",
-        year: "1980",
-        image: "https://images.unsplash.com/photo-1554048612-b6a482bc67e5",
-        description: "Lukisan yang menampilkan dinamika dan keindahan tarian tradisional Sunda."
-      },
+    bio: "Hendra Gunawan dikenal dengan lukisan-lukisannya yang menggambarkan kehidupan rakyat Indonesia dengan warna-warna yang berani.",
+    achievements: [
+      "Anugerah Seni dari Pemerintah RI",
+      "Penghargaan dari Museum Nasional Indonesia",
+      "Retrospective Exhibition di Singapura"
+    ],
+    artworks: [
       {
         title: "Pasar Ikan",
-        year: "1975",
-        image: "https://images.unsplash.com/photo-1563089145-599997674d42",
-        description: "Menggambarkan kehidupan pasar ikan tradisional dengan gaya khasnya yang penuh warna."
+        year: "1980",
+        image: "https://images.unsplash.com/photo-1582201942988-13e60e4556ee"
       }
     ]
   }
 };
 
 export default function ArtistDetail({ params }: { params: { id: string } }) {
-  const artist = artists[params.id as keyof typeof artists];
-
-  if (!artist) {
-    return <div>Seniman tidak ditemukan</div>;
-  }
-
-  return (
-    <div className="min-h-screen p-8 max-w-6xl mx-auto">
-      <Link 
-        href="/"
-        className="inline-flex items-center text-gray-600 mb-8 hover:text-gray-900"
-      >
-        ← Kembali ke Beranda
-      </Link>
-
-      {/* Artist Header */}
-      <div className="flex flex-col md:flex-row items-center md:items-start gap-8 mb-12">
-        <div className="relative w-48 h-48 rounded-full overflow-hidden">
-          <Image
-            src={artist.avatar}
-            alt={artist.name}
-            fill
-            className="object-cover"
-          />
-        </div>
-        <div>
-          <h1 className="text-4xl font-bold mb-4">{artist.name}</h1>
-          <p className="text-xl text-gray-600 mb-6">{artist.specialty}</p>
-          <p className="text-gray-700 leading-relaxed max-w-2xl">
-            {artist.bio}
-          </p>
+  // Pastikan id valid
+  if (!artists[params.id as keyof typeof artists]) {
+    return (
+      <div className="min-h-screen bg-amber-50 py-12">
+        <div className="max-w-4xl mx-auto px-4">
+          <div className="bg-white p-8 rounded-xl shadow-lg text-center">
+            <h1 className="text-2xl font-bold text-amber-900 mb-4">
+              Seniman tidak ditemukan
+            </h1>
+            <Link 
+              href="/"
+              className="text-amber-800 hover:underline"
+            >
+              Kembali ke Beranda
+            </Link>
+          </div>
         </div>
       </div>
+    );
+  }
 
-      {/* Masterpieces */}
-      <h2 className="text-3xl font-bold mb-8">Karya Masterpiece</h2>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {artist.masterpieces.map((artwork, index) => (
-          <div key={index} className="bg-white rounded-xl overflow-hidden shadow-lg">
-            <div className="relative aspect-[4/3]">
+  const artist = artists[params.id as keyof typeof artists];
+
+  return (
+    <div className="min-h-screen bg-amber-50">
+      {/* Header */}
+      <div className="bg-amber-800 text-amber-50 py-12">
+        <div className="max-w-4xl mx-auto px-4">
+          <Link 
+            href="/"
+            className="inline-flex items-center text-amber-200 mb-8 hover:text-amber-100"
+          >
+            ← Kembali ke Beranda
+          </Link>
+          
+          <div className="flex items-center gap-6">
+            <div className="relative w-24 h-24 rounded-full overflow-hidden">
               <Image
-                src={artwork.image}
-                alt={artwork.title}
+                src={artist.avatar}
+                alt={artist.name}
                 fill
                 className="object-cover"
               />
             </div>
-            <div className="p-6">
-              <h3 className="text-xl font-semibold mb-2">{artwork.title}</h3>
-              <p className="text-gray-500 mb-4">Tahun: {artwork.year}</p>
-              <p className="text-gray-700">{artwork.description}</p>
+            <div>
+              <h1 className="text-4xl font-bold mb-2">{artist.name}</h1>
+              <p className="text-amber-200">{artist.specialty}</p>
             </div>
           </div>
-        ))}
+        </div>
+      </div>
+
+      {/* Content */}
+      <div className="max-w-4xl mx-auto px-4 py-12">
+        <div className="bg-white rounded-xl overflow-hidden shadow-lg">
+          {/* Bio Section */}
+          <div className="p-8">
+            <h2 className="text-2xl font-bold text-amber-900 mb-4">Biografi</h2>
+            <p className="text-gray-600 mb-6">{artist.bio}</p>
+            
+            <h3 className="text-xl font-semibold text-amber-900 mb-3">Pencapaian</h3>
+            <ul className="list-disc pl-5 text-gray-600 mb-8">
+              {artist.achievements.map((achievement, index) => (
+                <li key={index} className="mb-2">{achievement}</li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Artworks Section */}
+          <div className="border-t border-amber-100 p-8">
+            <h2 className="text-2xl font-bold text-amber-900 mb-6">Karya Terkenal</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {artist.artworks.map((artwork, index) => (
+                <div key={index} className="bg-amber-50 rounded-lg overflow-hidden">
+                  <div className="relative aspect-[4/3]">
+                    <Image
+                      src={artwork.image}
+                      alt={artwork.title}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                  <div className="p-4">
+                    <h3 className="font-semibold text-amber-900">{artwork.title}</h3>
+                    <p className="text-gray-600 text-sm">Tahun: {artwork.year}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

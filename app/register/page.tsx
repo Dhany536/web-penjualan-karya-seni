@@ -1,19 +1,41 @@
 'use client';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, FormEvent } from 'react';
+import { useRouter } from 'next/navigation';
 
 export default function Register() {
+  const router = useRouter();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     password: '',
     confirmPassword: ''
   });
+  const [error, setError] = useState('');
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    // Implementasi registrasi
-    console.log('Register:', formData);
+    setError('');
+
+    try {
+      // Validasi password
+      if (formData.password !== formData.confirmPassword) {
+        setError('Password tidak cocok');
+        return;
+      }
+
+      if (formData.password.length < 6) {
+        setError('Password minimal 6 karakter');
+        return;
+      }
+
+      // Simulasi registrasi berhasil
+      console.log('Register:', formData);
+      router.push('/login'); // Redirect ke login setelah register
+    } catch (err) {
+      setError('Terjadi kesalahan saat mendaftar');
+      console.error(err);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -29,6 +51,12 @@ export default function Register() {
         <h1 className="text-2xl font-bold text-amber-900 mb-6 text-center">
           Daftar Akun Baru
         </h1>
+        
+        {error && (
+          <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+            {error}
+          </div>
+        )}
         
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>

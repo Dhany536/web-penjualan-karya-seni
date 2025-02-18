@@ -81,7 +81,7 @@ export default function HarmoniAlamDetail() {
               <h3 className="text-lg font-semibold text-amber-900 mb-4">Tentang Karya</h3>
               <div className="prose text-gray-600">
                 <p className="mb-4">
-                  "Harmoni Alam" adalah masterpiece yang diciptakan oleh Sarah Wijaya pada tahun 2023, 
+                 &quot;Harmoni Alam&quot; adalah masterpiece yang diciptakan oleh Sarah Wijaya pada tahun 2023, 
                   menggambarkan keselarasan antara manusia dan alam dalam perspektif kontemporer Indonesia. 
                   Lukisan ini menggunakan teknik cat minyak yang rumit dengan lapisan-lapisan warna yang 
                   menciptakan kedalaman visual yang menakjubkan.
@@ -101,7 +101,7 @@ export default function HarmoniAlamDetail() {
                 </ul>
                 <p>
                   Karya ini mendapat pengakuan dari kritikus seni internasional dan memenangkan 
-                  penghargaan "Best Contemporary Artwork" di Asian Art Biennale 2023.
+                  penghargaan &quot;Best Contemporary Artwork&quot; di Asian Art Biennale 2023.
                 </p>
               </div>
             </div>
